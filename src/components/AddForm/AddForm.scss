@@ -1,0 +1,51 @@
+.add-form {
+    padding: 0 20px 20px 20px;
+    &__input {
+        width: 100%;
+        textarea {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            resize: none;
+            cursor: text;
+        }
+    }
+
+    &__bottom {
+        img {
+            cursor: pointer;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.panel {
+
+    &__bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-add-btn{
+          padding: 20px;  
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          border-radius: 10px;
+          width: 100%;
+          &:hover{
+              background-color: lighten(#5a6378, 10);
+          }
+
+          img {
+              margin: 0 8px 0 0
+          }
+
+          span {
+            color: #fff;
+            font-size: 16px; 
+          }
+        }
+    }
+}
