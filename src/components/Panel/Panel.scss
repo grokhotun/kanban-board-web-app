@@ -1,15 +1,24 @@
 .panel {
-    margin: 0 20px 0 0;
+    position: relative;
+    margin: 0 20px 30px 0;
     align-items: flex-start;
     background-color: #5a6378;
     border-radius: 10px;
     width: 350px;
-
-    // &--empty {
-    //     .add-form {
-    //         margin: 20px 0 0 0;
-    //     }
-    // }
+    max-height: 600px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        width: 0px;
+      }
+    &__title {
+        border-radius: 10px;
+        background-color: #3ce8cc;
+        color:#fff;
+        font-size: 17px;
+        font-weight: bold;
+        padding: 20px 0 20px 0;
+        text-align: center;
+    }
 
     &__items{
         padding: 0 20px 0 20px;

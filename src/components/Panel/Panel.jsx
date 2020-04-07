@@ -7,15 +7,14 @@ import AddForm from '../AddForm/AddForm';
 import './Panel.scss';
 
 
-
-
-const Panel = ({ items }) => {
+const Panel = ({ cards, title }) => {
     return (
         <div className="panel">
+            <div className="panel__title">{title}</div>
             <div className="panel__items">
                 {
-                    items && 
-                    items.map(card => <Card>{card.text}</Card>)
+                    cards && 
+                    cards.map((card, index) => <Card key={index}>{card}</Card>)
                 }
             </div>
             <AddForm />

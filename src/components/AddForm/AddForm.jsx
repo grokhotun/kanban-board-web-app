@@ -44,8 +44,7 @@ const AddForm = () => {
                             onClick={() => { setShowForm(true) }}
                             className="panel__bottom">
                             <div className="panel__bottom-add-btn">
-                                <img
-                                    src={addSVG} alt="Add icon" />
+                                <img src={addSVG} alt="Add icon" />
                                 <span>Добавить карточку...</span>
                             </div>
                         </div>
