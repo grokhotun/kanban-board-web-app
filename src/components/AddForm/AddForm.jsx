@@ -7,16 +7,29 @@ import './AddForm.scss';
 import addSVG from '../../assets/add.svg';
 import clearSVG from '../../assets/clear.svg';
 
-const AddForm = () => {
+const AddForm = ({ isEmptyPanel, addCard, panelIndex, addPanel }) => {
 
     const [showForm, setShowForm] = useState(false);
+    const [value, setValue] = useState('');
     const textareaRef = useRef(null);
 
-    useEffect( () => {
-        if(textareaRef.current) {    
+
+    useEffect(() => {
+        if (textareaRef.current) {
             textareaRef.current.focus();
         }
-    },[showForm])
+    }, [showForm])
+
+
+    const addElement = () => {
+        if (!isEmptyPanel) {
+            addPanel(value);
+        } else {
+            addCard(panelIndex, value)
+        }
+        setValue('');
+        setShowForm(false);
+    }
 
     return (
         <React.Fragment>
@@ -26,12 +39,16 @@ const AddForm = () => {
                         <div className="add-form">
                             <div className="add-form__input">
                                 <Card>
-                                <textarea 
-                                    placeholder="Введите название карточки"
-                                    ref={textareaRef} rows="5" ></textarea>
+                                    <textarea
+                                        onChange={e => console.log(e.target.value) || setValue(e.target.value)}
+                                        value={value}
+                                        placeholder={!isEmptyPanel ? "Введите название колонки" : "Введите название карточки"}
+                                        ref={textareaRef} rows="5" ></textarea>
                                 </Card>
                                 <div className="add-form__bottom">
-                                    <Button>Добавить карточку</Button>
+                                    <Button
+                                        onClick={addElement}
+                                    >{!isEmptyPanel ? "Добавить колонку" : "Добавить карточку"}</Button>
                                     <img
                                         onClick={() => { setShowForm(false) }}
                                         src={clearSVG} alt="Clear icon" />
@@ -45,7 +62,7 @@ const AddForm = () => {
                             className="panel__bottom">
                             <div className="panel__bottom-add-btn">
                                 <img src={addSVG} alt="Add icon" />
-                                <span>Добавить карточку...</span>
+                                <span>{!isEmptyPanel ? "Добавить колонку..." : "Добавить карточку..."}</span>
                             </div>
                         </div>
                     )

@@ -5,25 +5,43 @@ import classNames from 'classnames';
 import Card from '../Card/Card';
 import AddForm from '../AddForm/AddForm';
 import './Panel.scss';
+import removeSvg from '../../assets/remove.svg';
 
 
-const Panel = ({ cards, title }) => {
+
+const Panel = ({ cards, title, addCard, panelIndex, addPanel, removePanel  }) => {
+    
+    const removeElement = () => {
+        if (global.confirm('Вы хотите удалить панель?')) {
+            removePanel(panelIndex)
+        }
+    }
+    
+    
+
     return (
         <div className="panel">
-            <div className="panel__title">{title}</div>
+            {
+                title && 
+                <div className="panel__title">
+                    <span>{title}</span>
+                    <img onClick={removeElement} src={removeSvg} alt="Remove icon"/>
+                </div>
+            }
             <div className="panel__items">
                 {
                     cards && 
                     cards.map((card, index) => <Card key={index}>{card}</Card>)
                 }
             </div>
-            <AddForm />
+            <AddForm isEmptyPanel={cards} addCard={addCard} panelIndex={panelIndex} addPanel={addPanel} />
         </div>
     )
 }
 
 Panel.propTypes = {
-    text: PropTypes.string.isRequired
+    cards: PropTypes.node,
+    title: PropTypes.string
 };
 
 
