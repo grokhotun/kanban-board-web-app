@@ -17,7 +17,6 @@ const Panel = ({ cards, title, addCard, panelIndex, addPanel, removePanel }) => 
         }
     }
 
-
     return cards ? (
         <div className="panel">
             {

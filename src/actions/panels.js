@@ -15,3 +15,8 @@ export const removePanel = (index) => ({
     type: 'REMOVE_PANEL',
     payload: index
 })
+
+export const onDragEnd = (result) => ({
+    type: 'DRAG_DROP',
+    payload: result
+})

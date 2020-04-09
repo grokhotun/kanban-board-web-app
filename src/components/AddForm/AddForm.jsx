@@ -22,13 +22,19 @@ const AddForm = ({ isEmptyPanel, addCard, panelIndex, addPanel }) => {
 
 
     const addElement = () => {
-        if (isEmptyPanel) {
-            addPanel(value);
+
+        if (value) {        
+            if (isEmptyPanel) {
+                addPanel(value);
+            } else {
+                addCard(panelIndex, value)
+            }
+            setValue('');
+            setShowForm(false);
         } else {
-            addCard(panelIndex, value)
+            alert('Поле не может быть пустым!')
+            return;
         }
-        setValue('');
-        setShowForm(false);
     }
 
     return (

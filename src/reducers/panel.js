@@ -1,3 +1,5 @@
+import { onDragEnd } from "../helpers/onDragEnd";
+
 const initialState = [
     {
         title: "План на месяц",
@@ -47,8 +49,14 @@ export const rootReducer = (state = initialState, action) => {
                 }
             ];
 
+        case "DRAG_DROP": {
+            console.log(action.payload);
+            return onDragEnd(action.payload, state);
+            
+        }
+
         case "REMOVE_PANEL":
-            return console.log('hihihi') || state.filter(( e , index) => action.payload !== index)
+            return state.filter(( e , index) => action.payload !== index)
 
         default:
             return state;
