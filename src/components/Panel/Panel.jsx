@@ -19,21 +19,17 @@ const Panel = ({ cards, title, addCard, panelIndex, addPanel, removePanel }) => 
 
 
     return cards ? (
-        <Droppable droppableId={`panel-${panelIndex}`}>
+        <div className="panel">
             {
-                provided => (
-                    <div
-                        {...provided.droppableProps}
-                        ref={provided.innerRef}
-                        className="panel">
-                        {
-                            <div className="panel__title">
-                                <span>{title}</span>
-                                <img onClick={removeElement} src={removeSvg} alt="Remove icon" />
-                            </div>
-                        }
-                        <div className="panel__body">
-
+                <div className="panel__title">
+                    <span>{title}</span>
+                    <img onClick={removeElement} src={removeSvg} alt="Remove icon" />
+                </div>
+            }
+            <Droppable droppableId={`panel-${panelIndex}`}>
+                {
+                    provided => (
+                        <div  {...provided.droppableProps} ref={provided.innerRef} className="panel__body">
                             <div className="panel__items">
                                 {
 
@@ -42,11 +38,11 @@ const Panel = ({ cards, title, addCard, panelIndex, addPanel, removePanel }) => 
                             </div>
                             {provided.placeholder}
                         </div>
-                        <AddForm isEmptyPanel={false} addCard={addCard} panelIndex={panelIndex} addPanel={addPanel} />
-                    </div >
-                )
-            }
-        </Droppable>
+                    )
+                }
+            </Droppable>
+            <AddForm isEmptyPanel={false} addCard={addCard} panelIndex={panelIndex} addPanel={addPanel} />
+        </div >
 
     ) : (
             <div className="panel">
