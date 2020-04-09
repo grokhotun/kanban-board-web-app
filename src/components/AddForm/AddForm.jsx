@@ -22,7 +22,7 @@ const AddForm = ({ isEmptyPanel, addCard, panelIndex, addPanel }) => {
 
 
     const addElement = () => {
-        if (!isEmptyPanel) {
+        if (isEmptyPanel) {
             addPanel(value);
         } else {
             addCard(panelIndex, value)
@@ -42,13 +42,13 @@ const AddForm = ({ isEmptyPanel, addCard, panelIndex, addPanel }) => {
                                     <textarea
                                         onChange={e => console.log(e.target.value) || setValue(e.target.value)}
                                         value={value}
-                                        placeholder={!isEmptyPanel ? "Введите название колонки" : "Введите название карточки"}
+                                        placeholder={isEmptyPanel ? "Введите название колонки" : "Введите название карточки"}
                                         ref={textareaRef} rows="5" ></textarea>
                                 </Card>
                                 <div className="add-form__bottom">
                                     <Button
                                         onClick={addElement}
-                                    >{!isEmptyPanel ? "Добавить колонку" : "Добавить карточку"}</Button>
+                                    >{isEmptyPanel ? "Добавить колонку" : "Добавить карточку"}</Button>
                                     <img
                                         onClick={() => { setShowForm(false) }}
                                         src={clearSVG} alt="Clear icon" />
@@ -62,7 +62,7 @@ const AddForm = ({ isEmptyPanel, addCard, panelIndex, addPanel }) => {
                             className="panel__bottom">
                             <div className="panel__bottom-add-btn">
                                 <img src={addSVG} alt="Add icon" />
-                                <span>{!isEmptyPanel ? "Добавить колонку..." : "Добавить карточку..."}</span>
+                                <span>{isEmptyPanel ? "Добавить колонку..." : "Добавить карточку..."}</span>
                             </div>
                         </div>
                     )

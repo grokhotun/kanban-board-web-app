@@ -1,25 +1,34 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
+import { DragDropContext } from 'react-beautiful-dnd';
 
 
 import { addCard, addPanel, removePanel } from '../actions/panels';
 import Panel from '../components/Panel/Panel';
 
 
+const onDragEnd = () => {
+    console.log('lol');
+}
+
 
 const Panels = ({ items, addCard, addPanel, removePanel }) => {
 
-    // console.log(items.map((item, index) => console.log(item, index)));
-
-    return <Fragment>
-        {items.map((item, index) => <Panel key={index} {...item} addCard={addCard} panelIndex={index} removePanel={removePanel} />)};
-             <Panel addCard={addCard} addPanel={addPanel} />
-    </Fragment>
+    return (
+        <Fragment>
+            <DragDropContext onDragEnd={onDragEnd}>
+                {
+                    items.map((item, index) => <Panel {...item} key={index} addCard={addCard} panelIndex={index} removePanel={removePanel} />)
+                }
+            </DragDropContext>
+            <Panel {...items} addCard={addCard} addPanel={addPanel} />
+        </Fragment>
+    );
 }
 
 
 
-const mapStateToProps = (panels) => {
+const mapStateToProps = (panels) => {   
     return {
         items: panels
     }
@@ -31,7 +40,7 @@ const mapDispatchToProps = dispatch => ({
     },
     addPanel: (name) => {
         dispatch(addPanel(name))
-    }, 
+    },
     removePanel: (index) => {
         // debugger;
         dispatch(removePanel(index))
