@@ -1,8 +1,9 @@
-export const onDragEnd = (result, columns) => {
-    if (!result.destination) return;
+export const onDragEnd = (result, state) => {
+    if (!result.destination) 
+      return state;
   
     // Копируем входящий массив данных
-    const copiedItems = [...columns];
+    const copiedItems = [...state];
   
     // Вытаскиваем объекты source и destination из result
     const { source, destination } = result;

@@ -50,13 +50,14 @@ export const rootReducer = (state = initialState, action) => {
             ];
 
         case "DRAG_DROP": {
-            console.log(action.payload);
+            console.log('dargdrop', action.payload);
             return onDragEnd(action.payload, state);
             
         }
 
         case "REMOVE_PANEL":
             return state.filter(( e , index) => action.payload !== index)
+            // console.log(state.filter(( e , index) => action.payload !== index));
 
         default:
             return state;

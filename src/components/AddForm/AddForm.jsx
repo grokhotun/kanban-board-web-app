@@ -42,7 +42,7 @@ const AddForm = ({ isEmptyPanel, addCard, panelIndex, addPanel }) => {
             {
                 showForm
                     ? (
-                        <div className="add-form">
+                        <div className={!isEmptyPanel ? "add-form" : "add-form--empty"}>
                             <div className="add-form__input">
                                 <Card>
                                     <textarea
