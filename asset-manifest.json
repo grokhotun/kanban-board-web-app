@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/kanban-board-web-app/static/css/main.fe8a8124.chunk.css",
-    "main.js": "/kanban-board-web-app/static/js/main.35d019b5.chunk.js",
-    "main.js.map": "/kanban-board-web-app/static/js/main.35d019b5.chunk.js.map",
+    "main.css": "/kanban-board-web-app/static/css/main.94af0e53.chunk.css",
+    "main.js": "/kanban-board-web-app/static/js/main.5cdea321.chunk.js",
+    "main.js.map": "/kanban-board-web-app/static/js/main.5cdea321.chunk.js.map",
     "runtime-main.js": "/kanban-board-web-app/static/js/runtime-main.9e843a7a.js",
     "runtime-main.js.map": "/kanban-board-web-app/static/js/runtime-main.9e843a7a.js.map",
     "static/js/2.e53e7875.chunk.js": "/kanban-board-web-app/static/js/2.e53e7875.chunk.js",
     "static/js/2.e53e7875.chunk.js.map": "/kanban-board-web-app/static/js/2.e53e7875.chunk.js.map",
     "index.html": "/kanban-board-web-app/index.html",
-    "precache-manifest.68470833c2a13e8b7f4850fd3362a90f.js": "/kanban-board-web-app/precache-manifest.68470833c2a13e8b7f4850fd3362a90f.js",
+    "precache-manifest.7c0000a7d8a534caddbf414e3c1b3fdf.js": "/kanban-board-web-app/precache-manifest.7c0000a7d8a534caddbf414e3c1b3fdf.js",
     "service-worker.js": "/kanban-board-web-app/service-worker.js",
-    "static/css/main.fe8a8124.chunk.css.map": "/kanban-board-web-app/static/css/main.fe8a8124.chunk.css.map",
+    "static/css/main.94af0e53.chunk.css.map": "/kanban-board-web-app/static/css/main.94af0e53.chunk.css.map",
     "static/js/2.e53e7875.chunk.js.LICENSE.txt": "/kanban-board-web-app/static/js/2.e53e7875.chunk.js.LICENSE.txt",
     "static/media/add.svg": "/kanban-board-web-app/static/media/add.b4e7124a.svg",
     "static/media/clear.svg": "/kanban-board-web-app/static/media/clear.e82c0deb.svg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.9e843a7a.js",
     "static/js/2.e53e7875.chunk.js",
-    "static/css/main.fe8a8124.chunk.css",
-    "static/js/main.35d019b5.chunk.js"
+    "static/css/main.94af0e53.chunk.css",
+    "static/js/main.5cdea321.chunk.js"
   ]
 }
