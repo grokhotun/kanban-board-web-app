@@ -6,6 +6,3 @@
 ## Стэк:
 - ReactJS
 - Redux
-- React Router
-- Thunk
-- Reselect
